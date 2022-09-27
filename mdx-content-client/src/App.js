@@ -12,6 +12,9 @@ function App() {
     fetch("http://localhost:3001/content")
       .then(res => res.json())
       .then(setContentList)
+      .catch(err => {
+        setCurrentContent(<h1>Could not get remote content. Check if server is running.</h1>)
+      })
   }, []);
 
   const renderContent = async (content) => {
