@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+}

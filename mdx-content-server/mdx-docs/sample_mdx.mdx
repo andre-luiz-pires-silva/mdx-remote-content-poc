@@ -1,0 +1,19 @@
+## MDX on demand
+* This is a POC for [MDX on demand](https://mdxjs.com/guides/mdx-on-demand/)
+* Server has an API to return the content list. Content is a JSON object with:
+  - ```title```: The string that will be used to create the left menu
+  - ```content```: The string with the markdown text to be rendered
+
+
+## HTML components example
+Button: 
+<button onClick={()=> alert("haa")}>Button with alert</button>
+
+
+## Code example
+
+This is how we convert mdx to React component:
+```js
+    const code = String(await compile(content.content, {outputFormat: 'function-body'}))
+    const {default: Content} = await run(code, runtime)
+```
